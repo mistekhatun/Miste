@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter_application_2/pages/homepage.dart';
+import 'package:flutter_application_2/pages/loginpage.dart';
+
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,25 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Center(
-        child: Material(
-          color: Colors.amber,
-          child: Center(
-            child: Container(
-              color: Colors.green,
-              child: Center(
-                  child: Text(
-                    "this is my first app",
-                    style: TextStyle(color: Colors.red, fontSize: 40,fontWeight: FontWeight.w500,backgroundColor: Colors.blue ),
-                  ),
-                
-              ),
-              width: 400,
-              height: 500,
-            ),
-          ),
-        ),
-      ),
+    //  home: HomePage(),
+      themeMode: ThemeMode.light,
+      theme:ThemeData(primarySwatch: Colors.deepPurple),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      routes: {
+        "/":(context)=>const LoginPage(),
+        "/home":(context)=>const HomePage(),
+        "/login":(context)=>const LoginPage(),
+      },
     );
   }
 }
