@@ -8,15 +8,45 @@ class LoginPage extends StatelessWidget {
       color:Colors.white,
      child: Column(
        children: [
-         Image.asset("assets/images/login_img.png"),
-         Text("Welcome",style: TextStyle(
+         SizedBox(
+           width: 300,
+           height: 300,
+           child: Image.asset("assets/images/login_img.png",fit: BoxFit.fill,)),
+          
+           const SizedBox(
+             height: 60,
+             
+           ),
+         const Text("Welcome",style: TextStyle(
                 fontSize: 23,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-                backgroundColor: Colors.blue),)
+                color: Colors.blue,
+                fontWeight: FontWeight.bold),),
+               const SizedBox(
+             height: 60,
+             
+           ),
+           Padding(
+             padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 50),
+             child: Column(children: [
+               TextFormField(
+decoration: const InputDecoration(
+  hintText: "User ID",
+  labelText: "User ID",
+),
+             ),
+             TextFormField(
+               obscureText: true,
+decoration: const InputDecoration(
+  hintText: "Enter Your Password",
+  labelText: "Password",
+  ),
+
+),
+             ],),
+           ),
+const Text("Forgate Password?"),
        ],
-     ),
-      
+    ),  
     );
   }
 }
