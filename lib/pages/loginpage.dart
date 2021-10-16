@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/pages/routes.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({ Key? key }) : super(key: key);
 
@@ -45,6 +46,17 @@ decoration: const InputDecoration(
              ],),
            ),
 const Text("Forgate Password?"),
+const SizedBox(
+  height:20,
+),
+ ElevatedButton(
+   onPressed:(){
+     Navigator.pushNamed(context, MyRoutes.homeRoute);
+   },
+   child: const Text ("login"),
+  style: TextButton.styleFrom(backgroundColor: Colors.blue,minimumSize: const Size(100,40)),
+  
+  ),
        ],
     ),  
     );
